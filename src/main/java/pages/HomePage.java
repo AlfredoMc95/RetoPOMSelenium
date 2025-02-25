@@ -10,6 +10,9 @@ public class HomePage extends CommonActionsPage {
     @FindBy(xpath = "//a[normalize-space()='Signup / Login']")
     private WebElement homeButton;
 
+    @FindBy(xpath = "//ul[@class='nav navbar-nav']//b")
+    private WebElement accountName;
+
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -17,5 +20,10 @@ public class HomePage extends CommonActionsPage {
 
     public void goToSignUpPage(){
         clickElement(homeButton);
+    }
+
+    public void validateAccountName(String expectedName){
+        getElement(accountName);
+        validateText(accountName, expectedName);
     }
 }

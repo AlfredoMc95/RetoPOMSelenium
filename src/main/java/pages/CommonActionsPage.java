@@ -1,9 +1,10 @@
 package pages;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
@@ -20,12 +21,12 @@ public class CommonActionsPage {
         driver.manage().window().maximize();
     }
 
-    public void cleanInputText(By localization) {
-        driver.findElement(localization).clear();
+    public void cleanInputText(WebElement localization) {
+        localization.clear();
     }
 
-    public void typeInputText(By localization, String text) {
-        driver.findElement(localization).sendKeys(text);
+    public void typeInputText(WebElement localization, String text) {
+        localization.sendKeys(text);
     }
 
     public void sendText(By localization){
@@ -42,5 +43,19 @@ public class CommonActionsPage {
 
     public void clickElement(WebElement localization){
         localization.click();
+    }
+
+    public void selectDropdownByText(WebElement dropdown, String value) {
+        Select select = new Select(dropdown);
+        select.selectByVisibleText(value);
+    }
+
+    public WebElement getElement(WebElement element) {
+        return element;
+    }
+
+    public void validateText(WebElement element, String expectedText) {
+        String actualText = element.getText();
+        Assertions.assertEquals(expectedText, actualText,"El texto obtenido no coincide con el esperado.");
     }
 }

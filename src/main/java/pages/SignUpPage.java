@@ -17,12 +17,21 @@ public class SignUpPage extends CommonActionsPage {
     @FindBy(xpath = "//button[normalize-space()='Signup']")
     private WebElement signUpButton;
 
+    @FindBy(xpath = "//input[@data-qa='login-email']")
+    private WebElement userEmailLogin;
+
+    @FindBy(xpath = "//input[@placeholder='Password']")
+    private WebElement userPassword;
+
+    @FindBy(xpath = "//button[normalize-space()='Login']")
+    private WebElement loginButton;
+
     public SignUpPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public void enterUserInfo(String name, String email){
+    public void enterUserRegisterInfo(String name, String email){
         cleanInputText(userName);
         cleanInputText(userEmail);
         typeInputText(userName, name);
@@ -32,4 +41,16 @@ public class SignUpPage extends CommonActionsPage {
     public void submitSignUp() {
         clickElement(signUpButton);
     }
+
+    public void enterUserLoginInfo(String email, String password){
+        cleanInputText(userEmailLogin);
+        cleanInputText(userPassword);
+        typeInputText(userEmailLogin, email);
+        typeInputText(userPassword, password);
+    }
+
+    public void submitLogin() {
+        clickElement(loginButton);
+    }
+
 }

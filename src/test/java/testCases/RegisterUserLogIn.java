@@ -8,7 +8,7 @@ public class RegisterUserLogIn extends BaseTest {
     @Test
     public void createUser(){
         homePage.goToSignUpPage();
-        singUpPage.enterUserInfo("Pedro", "pedroTest@testgmail.com");
+        singUpPage.enterUserRegisterInfo("Pedro", "pedroTest@testgmail.com");
         singUpPage.submitSignUp();
         accountInformationPage.maleGender();
         accountInformationPage.setPassword("12345678");

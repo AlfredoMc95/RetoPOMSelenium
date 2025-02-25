@@ -8,7 +8,7 @@ public class RegisterUserFirstTest extends BaseTest {
     @Test
     public void createAndDeleteUser() {
         homePage.goToSignUpPage();
-        singUpPage.enterUserInfo("Paco", "PacoTest@testgmail.com");
+        singUpPage.enterUserRegisterInfo("Paco", "PacoTest@testgmail.com");
         singUpPage.submitSignUp();
         accountInformationPage.maleGender();
         accountInformationPage.setPassword("12345678");

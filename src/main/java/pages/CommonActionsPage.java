@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
@@ -12,11 +13,6 @@ public class CommonActionsPage {
 
     public CommonActionsPage(WebDriver driver) {
         this.driver = driver;
-    }
-
-    public WebDriver firefoxDriverConnection() {
-        driver = new FirefoxDriver();
-        return driver;
     }
 
     public void visitPage(String url) {
@@ -40,7 +36,11 @@ public class CommonActionsPage {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
     }
 
-    public void getTitle() {
-        driver.getTitle();
+    public String getTitle() {
+        return driver.getTitle();
+    }
+
+    public void clickElement(WebElement localization){
+        localization.click();
     }
 }

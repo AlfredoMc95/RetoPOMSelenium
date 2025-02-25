@@ -5,22 +5,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AccountCreatedPage extends CommonActionsPage {
+public class AccountDeletedPage extends CommonActionsPage{
     @FindBy(xpath = "//a[normalize-space()='Continue']")
     private WebElement confirmButton;
 
-    @FindBy(xpath = "//b[normalize-space()='Account Created!']")
+    @FindBy(xpath = "//b[normalize-space()='Account Deleted!']")
     private WebElement accountCreated;
 
 
-    public AccountCreatedPage(WebDriver driver) {
+    public AccountDeletedPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public void confirmAccount(){
+    public void deleteAccount(){
         getElement(accountCreated);
-        validateText(accountCreated, "ACCOUNT CREATED!");
+        validateText(accountCreated, "ACCOUNT DELETED!");
         clickElement(confirmButton);
     }
 }

@@ -13,6 +13,9 @@ public class HomePage extends CommonActionsPage {
     @FindBy(xpath = "//ul[@class='nav navbar-nav']//b")
     private WebElement accountName;
 
+    @FindBy(xpath = "//a[normalize-space()='Delete Account']")
+    private WebElement deleteAccount;
+
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -25,5 +28,9 @@ public class HomePage extends CommonActionsPage {
     public void validateAccountName(String expectedName){
         getElement(accountName);
         validateText(accountName, expectedName);
+    }
+
+    public void deleteAccount(){
+        clickElement(deleteAccount);
     }
 }

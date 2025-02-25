@@ -4,10 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import pages.AccountCreatedPage;
-import pages.AccountInformationPage;
-import pages.HomePage;
-import pages.SignUpPage;
+import pages.*;
 
 public class BaseTest {
 
@@ -16,6 +13,7 @@ public class BaseTest {
     protected SignUpPage singUpPage;
     protected AccountInformationPage accountInformationPage;
     protected AccountCreatedPage accountCreatedPage;
+    protected AccountDeletedPage accountDeletedPage;
 
     @BeforeEach
     public void setUp() {
@@ -24,6 +22,7 @@ public class BaseTest {
         singUpPage = new SignUpPage(driver);
         accountInformationPage = new AccountInformationPage(driver);
         accountCreatedPage = new AccountCreatedPage(driver);
+        accountDeletedPage = new AccountDeletedPage(driver);
         homePage.visitPage("https://automationexercise.com/");
     }
 

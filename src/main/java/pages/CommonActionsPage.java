@@ -48,4 +48,8 @@ public class CommonActionsPage {
         String actualText = element.getText();
         Assertions.assertEquals(expectedText, actualText,"El texto obtenido no coincide con el esperado.");
     }
+
+    public void validateStringText(String element, String expectedText) {
+        Assertions.assertEquals(expectedText, element,"El texto obtenido no coincide con el esperado.");
+    }
 }

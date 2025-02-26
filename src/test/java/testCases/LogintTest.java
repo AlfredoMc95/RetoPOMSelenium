@@ -3,7 +3,7 @@ package testCases;
 import base.BaseTest;
 import org.junit.jupiter.api.Test;
 
-public class LoginSecondtest extends BaseTest {
+public class LogintTest extends BaseTest {
 
     @Test
     public void LoginCorrectUser() {
@@ -21,5 +21,15 @@ public class LoginSecondtest extends BaseTest {
         singUpPage.enterUserLoginInfo("pedroTestFake@testgmail.com", "FakePassword");
         singUpPage.submitLogin();
         singUpPage.validateErrorMesage("Your email or password is incorrect!");
+    }
+
+    @Test
+    public void Logout() {
+        homePage.goToSignUpPage();
+        singUpPage.enterUserLoginInfo("pedroTest@testgmail.com", "12345678");
+        singUpPage.submitLogin();
+        homePage.validateAccountName("Pedro");
+        homePage.logout();
+        singUpPage.validatePageTitle("Automation Exercise - Signup / Login");
     }
 }

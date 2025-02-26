@@ -14,6 +14,7 @@ public class BaseTest {
     protected AccountInformationPage accountInformationPage;
     protected AccountCreatedPage accountCreatedPage;
     protected AccountDeletedPage accountDeletedPage;
+    protected ContactUsPage contactUsPage;
 
     @BeforeEach
     public void setUp() {
@@ -23,6 +24,7 @@ public class BaseTest {
         accountInformationPage = new AccountInformationPage(driver);
         accountCreatedPage = new AccountCreatedPage(driver);
         accountDeletedPage = new AccountDeletedPage(driver);
+        contactUsPage = new ContactUsPage(driver);
         homePage.visitPage("https://automationexercise.com/");
     }
 

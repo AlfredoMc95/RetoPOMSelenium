@@ -1,6 +1,7 @@
 package pages;
 
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -51,5 +52,10 @@ public class CommonActionsPage {
 
     public void validateStringText(String element, String expectedText) {
         Assertions.assertEquals(expectedText, element,"El texto obtenido no coincide con el esperado.");
+    }
+
+    public void alertMessage(){
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
     }
 }

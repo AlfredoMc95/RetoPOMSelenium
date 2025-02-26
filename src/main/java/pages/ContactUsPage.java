@@ -75,6 +75,4 @@ public class ContactUsPage extends CommonActionsPage {
     public void returnToHomePage(){
         clickElement(backButton);
     }
-
-
 }

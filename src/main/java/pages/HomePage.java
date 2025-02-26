@@ -22,6 +22,9 @@ public class HomePage extends CommonActionsPage {
     @FindBy(xpath = "//a[normalize-space()='Contact us']")
     private WebElement contactUs;
 
+    @FindBy(xpath = "//a[contains(text(),'Test Cases')]")
+    private WebElement testCases;
+
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -46,5 +49,9 @@ public class HomePage extends CommonActionsPage {
 
     public void contactUs(){
         clickElement(contactUs);
+    }
+
+    public void testCasesPage(){
+        clickElement(testCases);
     }
 }

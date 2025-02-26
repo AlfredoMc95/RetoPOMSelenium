@@ -3,7 +3,7 @@ package testCases;
 import base.BaseTest;
 import org.junit.jupiter.api.Test;
 
-public class ContactUsForm  extends BaseTest {
+public class ContactUsFormTest extends BaseTest {
 
     @Test
     public void contactUsForm(){

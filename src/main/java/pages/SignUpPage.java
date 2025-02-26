@@ -26,6 +26,9 @@ public class SignUpPage extends CommonActionsPage {
     @FindBy(xpath = "//button[normalize-space()='Login']")
     private WebElement loginButton;
 
+    @FindBy(xpath = "//p[normalize-space()='Your email or password is incorrect!']")
+    private WebElement incorrectLogin;
+
     public SignUpPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -53,4 +56,8 @@ public class SignUpPage extends CommonActionsPage {
         clickElement(loginButton);
     }
 
+    public void validateErrorMesage(String expectedMessage){
+        getElement(incorrectLogin);
+        validateText(incorrectLogin, expectedMessage);
+    }
 }

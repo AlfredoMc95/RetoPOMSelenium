@@ -1,12 +1,10 @@
 package pages;
 
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import java.time.Duration;
 
 public class CommonActionsPage {
 
@@ -27,14 +25,6 @@ public class CommonActionsPage {
 
     public void typeInputText(WebElement localization, String text) {
         localization.sendKeys(text);
-    }
-
-    public void sendText(By localization){
-        driver.findElement(localization).submit();
-    }
-
-    public void implicitWait(int seconds) {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
     }
 
     public String getTitle() {

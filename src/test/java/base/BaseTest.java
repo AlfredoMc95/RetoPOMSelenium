@@ -30,9 +30,9 @@ public class BaseTest {
         homePage.visitPage("https://automationexercise.com/");
     }
 
-    /*@AfterEach
+    @AfterEach
     public void tearDown() {
         driver.quit();
-    }*/
+    }
 
 }
